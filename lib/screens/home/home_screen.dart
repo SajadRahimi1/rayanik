@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:lottie/lottie.dart';
 import 'package:rayanik/core/widgets/appbar_widget.dart';
 import 'package:rayanik/core/widgets/home_widget.dart';
 
@@ -13,12 +11,12 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: homeAppBar(),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 10),
+        padding: const EdgeInsets.symmetric(
+          horizontal: 10,
+        ),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            SizedBox(
-              height: Get.height / 40,
-            ),
             Container(
               width: Get.width,
               height: Get.height / 4,
@@ -30,7 +28,7 @@ class HomeScreen extends StatelessWidget {
                         "assets/pictures/images/banner.png",
                       ))),
             ),
-            SizedBox(height: Get.height / 18),
+            const SizedBox(height: 15),
             Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: const [
@@ -49,21 +47,6 @@ class HomeScreen extends StatelessWidget {
                     lottiesAsset: "assets/pictures/icons/service.json",
                   ),
                 ]),
-            SizedBox(
-              height: Get.height / 35,
-            ),
-            // Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
-            //   HomeWidget(
-            //     title: "درباره ما",
-            //     lottiesAsset: "assets/pictures/icons/aboutus.json",
-            //     height: Get.height / 7,
-            //   ),
-            //   const HomeWidget(
-            //     title: "تماس با ما",
-            //     // height: Get.height / 10,
-            //     lottiesAsset: "assets/pictures/icons/contact.json",
-            //   ),
-            // ]),
             Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: const [
