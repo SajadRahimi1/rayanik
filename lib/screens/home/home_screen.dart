@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 import 'package:rayanik/core/widgets/appbar_widget.dart';
+import 'package:rayanik/core/widgets/home_widget.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -30,54 +31,58 @@ class HomeScreen extends StatelessWidget {
                       ))),
             ),
             SizedBox(height: Get.height / 18),
-            Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-              SizedBox(
-                  width: Get.width / 4,
-                  // height: Get.height / 10,
-                  child: Lottie.asset(
-                    "assets/pictures/icons/rocket.json",
-                  )),
-              SizedBox(
-                  width: Get.width / 3,
-                  // height: Get.height / 10,
-                  child: Lottie.asset(
-                    "assets/pictures/icons/learning.json",
-                  )),
-              SizedBox(
-                  width: Get.width / 3,
-                  // height: Get.height / 10,
-                  child: Lottie.asset(
-                    "assets/pictures/icons/service.json",
-                  )),
-            ]),
-            Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
-              SizedBox(
-                  width: Get.width / 2,
-                  // height: Get.height / 10,
-                  child: Lottie.asset(
-                    "assets/pictures/icons/aboutus.json",
-                  )),
-              SizedBox(
-                  width: Get.width / 3,
-                  // height: Get.height / 10,
-                  child: Lottie.asset(
-                    "assets/pictures/icons/contact.json",
-                  )),
-            ]),
-            Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
-              SizedBox(
-                  width: Get.width / 3,
-                  // height: Get.height / 10,
-                  child: Lottie.asset(
-                    "assets/pictures/icons/collabration.json",
-                  )),
-              SizedBox(
-                  width: Get.width / 4,
-                  // height: Get.height / 10,
-                  child: Lottie.asset(
-                    "assets/pictures/icons/jobs.json",
-                  )),
-            ])
+            Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: const [
+                  HomeWidget(
+                    title: "استارتآپ",
+                    // height: Get.height / 10,
+                    lottiesAsset: "assets/pictures/icons/rocket.json",
+                  ),
+                  HomeWidget(
+                    title: "آموزش",
+                    // height: Get.height / 10,
+                    lottiesAsset: "assets/pictures/icons/learning.json",
+                  ),
+                  HomeWidget(
+                    title: "خدمات",
+                    lottiesAsset: "assets/pictures/icons/service.json",
+                  ),
+                ]),
+            SizedBox(
+              height: Get.height / 35,
+            ),
+            // Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
+            //   HomeWidget(
+            //     title: "درباره ما",
+            //     lottiesAsset: "assets/pictures/icons/aboutus.json",
+            //     height: Get.height / 7,
+            //   ),
+            //   const HomeWidget(
+            //     title: "تماس با ما",
+            //     // height: Get.height / 10,
+            //     lottiesAsset: "assets/pictures/icons/contact.json",
+            //   ),
+            // ]),
+            Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: const [
+                  HomeWidget(
+                    title: "تماس با ما",
+                    // height: Get.height / 10,
+                    lottiesAsset: "assets/pictures/icons/contact.json",
+                  ),
+                  HomeWidget(
+                    title: "همکاری با ما",
+                    // height: Get.height / 10,
+                    lottiesAsset: "assets/pictures/icons/collabration.json",
+                  ),
+                  HomeWidget(
+                    title: "بلاگ",
+                    // height: Get.height / 10,
+                    lottiesAsset: "assets/pictures/icons/blog.json",
+                  ),
+                ])
           ],
         ),
       ),
