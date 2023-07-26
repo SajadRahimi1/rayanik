@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:rayanik/core/widgets/appbar_widget.dart';
 import 'package:rayanik/core/widgets/home_widget.dart';
+import 'package:rayanik/screens/collabration/collabration_form_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -47,25 +48,25 @@ class HomeScreen extends StatelessWidget {
                     lottiesAsset: "assets/pictures/icons/service.json",
                   ),
                 ]),
-            Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
-                  HomeWidget(
-                    title: "تماس با ما",
-                    // height: Get.height / 10,
-                    lottiesAsset: "assets/pictures/icons/contact.json",
-                  ),
-                  HomeWidget(
-                    title: "همکاری با ما",
-                    // height: Get.height / 10,
-                    lottiesAsset: "assets/pictures/icons/collabration.json",
-                  ),
-                  HomeWidget(
-                    title: "بلاگ",
-                    // height: Get.height / 10,
-                    lottiesAsset: "assets/pictures/icons/blog.json",
-                  ),
-                ])
+            Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+              const HomeWidget(
+                title: "تماس با ما",
+                // height: Get.height / 10,
+                lottiesAsset: "assets/pictures/icons/contact.json",
+              ),
+              HomeWidget(
+                onTap: () => Get.to(() => const CollabrationFormScreen(),
+                    transition: Transition.leftToRight),
+                title: "همکاری با ما",
+                // height: Get.height / 10,
+                lottiesAsset: "assets/pictures/icons/collabration.json",
+              ),
+              const HomeWidget(
+                title: "بلاگ",
+                // height: Get.height / 10,
+                lottiesAsset: "assets/pictures/icons/blog.json",
+              ),
+            ])
           ],
         ),
       ),

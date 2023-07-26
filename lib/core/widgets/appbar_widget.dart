@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-AppBar screensAppBar({String title = ""}) => AppBar(
+AppBar screensAppBar({BuildContext? context, String title = ""}) => AppBar(
       backgroundColor: const Color(0xffF8FAFB),
       title: Text(
         title,
