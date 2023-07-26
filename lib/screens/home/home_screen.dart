@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:rayanik/core/widgets/appbar_widget.dart';
 import 'package:rayanik/core/widgets/home_widget.dart';
 import 'package:rayanik/screens/collabration/collabration_form_screen.dart';
+import 'package:rayanik/screens/learning/learning_menu_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -30,24 +31,23 @@ class HomeScreen extends StatelessWidget {
                       ))),
             ),
             const SizedBox(height: 15),
-            Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
-                  HomeWidget(
-                    title: "استارتآپ",
-                    // height: Get.height / 10,
-                    lottiesAsset: "assets/pictures/icons/rocket.json",
-                  ),
-                  HomeWidget(
-                    title: "آموزش",
-                    // height: Get.height / 10,
-                    lottiesAsset: "assets/pictures/icons/learning.json",
-                  ),
-                  HomeWidget(
-                    title: "خدمات",
-                    lottiesAsset: "assets/pictures/icons/service.json",
-                  ),
-                ]),
+            Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+              const HomeWidget(
+                title: "استارتآپ",
+                // height: Get.height / 10,
+                lottiesAsset: "assets/pictures/icons/rocket.json",
+              ),
+              HomeWidget(
+                onTap: () => Get.to(() => const LearningMenuScreen()),
+                title: "آموزش",
+                // height: Get.height / 10,
+                lottiesAsset: "assets/pictures/icons/learning.json",
+              ),
+              const HomeWidget(
+                title: "خدمات",
+                lottiesAsset: "assets/pictures/icons/service.json",
+              ),
+            ]),
             Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
               const HomeWidget(
                 title: "تماس با ما",
