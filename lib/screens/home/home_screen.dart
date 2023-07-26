@@ -4,6 +4,7 @@ import 'package:rayanik/core/widgets/appbar_widget.dart';
 import 'package:rayanik/core/widgets/home_widget.dart';
 import 'package:rayanik/screens/collabration/collabration_form_screen.dart';
 import 'package:rayanik/screens/learning/learning_menu_screen.dart';
+import 'package:rayanik/screens/services/services_menu_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -43,7 +44,8 @@ class HomeScreen extends StatelessWidget {
                 // height: Get.height / 10,
                 lottiesAsset: "assets/pictures/icons/learning.json",
               ),
-              const HomeWidget(
+              HomeWidget(
+                onTap: () => Get.to(() => const ServiceMenuScreen()),
                 title: "خدمات",
                 lottiesAsset: "assets/pictures/icons/service.json",
               ),
