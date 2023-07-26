@@ -24,7 +24,7 @@ class HomeWidget extends StatelessWidget {
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(15),
             // color: const Color(0xfff5f5f5)
-            color: goldColor.withOpacity(0.8)),
+            color: goldColor),
         child: Column(
           children: [
             Expanded(

@@ -5,6 +5,7 @@ import 'package:rayanik/core/widgets/home_widget.dart';
 import 'package:rayanik/screens/collabration/collabration_form_screen.dart';
 import 'package:rayanik/screens/learning/learning_menu_screen.dart';
 import 'package:rayanik/screens/services/services_menu_screen.dart';
+import 'package:rayanik/screens/startup/startup_form_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -22,17 +23,17 @@ class HomeScreen extends StatelessWidget {
                 fit: BoxFit.fill,
               ),
             ),
-            Align(
-              alignment: Alignment.centerLeft,
-              child: SizedBox(
-                width: Get.width / 1.05,
-                height: Get.height / 1.2,
-                child: Image.asset(
-                  "assets/pictures/images/back.png",
-                  fit: BoxFit.fill,
-                ),
-              ),
-            ),
+            // Align(
+            //   alignment: Alignment.centerLeft,
+            //   child: SizedBox(
+            //     width: Get.width / 1.05,
+            //     height: Get.height / 1.2,
+            //     child: Image.asset(
+            //       "assets/pictures/images/back.png",
+            //       fit: BoxFit.fill,
+            //     ),
+            //   ),
+            // ),
             SizedBox.expand(
               child: Padding(
                 padding: const EdgeInsets.symmetric(
@@ -42,7 +43,7 @@ class HomeScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Spacer(),
+                    const Spacer(),
                     // Container(
                     //   width: Get.width,
                     //   height: Get.height / 3.5,
@@ -59,22 +60,26 @@ class HomeScreen extends StatelessWidget {
                     Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          const HomeWidget(
+                          HomeWidget(
                             title: "استارتآپ",
                             // height: Get.height / 10,
                             lottiesAsset: "assets/pictures/icons/rocket.json",
+                            onTap: () => Get.to(
+                              () => const StartupFormScreen(),
+                            ),
                           ),
                           HomeWidget(
                             onTap: () => Get.to(
-                                () => const LearningMenuScreen(),
-                                transition: Transition.leftToRight),
+                              () => const LearningMenuScreen(),
+                            ),
                             title: "آموزش",
                             // height: Get.height / 10,
                             lottiesAsset: "assets/pictures/icons/learning.json",
                           ),
                           HomeWidget(
-                            onTap: () => Get.to(() => const ServiceMenuScreen(),
-                                transition: Transition.leftToRight),
+                            onTap: () => Get.to(
+                              () => const ServiceMenuScreen(),
+                            ),
                             title: "خدمات",
                             lottiesAsset: "assets/pictures/icons/service.json",
                           ),
@@ -92,8 +97,8 @@ class HomeScreen extends StatelessWidget {
                           ),
                           HomeWidget(
                             onTap: () => Get.to(
-                                () => const CollabrationFormScreen(),
-                                transition: Transition.leftToRight),
+                              () => const CollabrationFormScreen(),
+                            ),
                             title: "همکاری با ما",
                             // height: Get.height / 10,
                             lottiesAsset:
@@ -116,8 +121,8 @@ class HomeScreen extends StatelessWidget {
                           ),
                           HomeWidget(
                             onTap: () => Get.to(
-                                () => const CollabrationFormScreen(),
-                                transition: Transition.leftToRight),
+                              () => const CollabrationFormScreen(),
+                            ),
                             title: "درباره ما",
                             // height: Get.height / 10,
                             lottiesAsset: "assets/pictures/icons/aboutus.json",
