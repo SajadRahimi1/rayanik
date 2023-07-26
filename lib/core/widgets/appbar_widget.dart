@@ -16,6 +16,6 @@ AppBar homeAppBar() => AppBar(
       actions: [
         IconButton(onPressed: () {}, icon: const Icon(Icons.person)),
       ],
-      leading: IconButton(onPressed: () {}, icon: const  Icon(Icons.menu)),
+      leading: IconButton(onPressed: () {}, icon: const Icon(Icons.menu)),
       iconTheme: const IconThemeData(color: Color(0xff000000)),
     );
