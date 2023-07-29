@@ -23,7 +23,7 @@ class LearningMenuScreen extends StatelessWidget {
             height: Get.height / 4,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15),
-                color: Color(0xffe9bcac)),
+                color: const Color(0xffe9bcac)),
             child: Row(
               children: [
                 Expanded(
@@ -31,7 +31,7 @@ class LearningMenuScreen extends StatelessWidget {
                   "آموزش ویدیویی",
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                      color: Color(0xffffffff), fontSize: Get.width / 18),
+                      color: const Color(0xffffffff), fontSize: Get.width / 18),
                 )),
                 SizedBox(
                   height: Get.height,
@@ -61,7 +61,7 @@ class LearningMenuScreen extends StatelessWidget {
                   "پادکست",
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                      color: Color(0xffffffff), fontSize: Get.width / 16),
+                      color: const Color(0xffffffff), fontSize: Get.width / 16),
                 )),
                 SizedBox(
                   height: Get.height,
@@ -78,12 +78,12 @@ class LearningMenuScreen extends StatelessWidget {
           onTap: () => Get.to(() => const BookLearningScreen(),
               transition: Transition.leftToRight),
           child: Container(
-            margin: EdgeInsets.all(10),
+            margin: const EdgeInsets.all(10),
             width: Get.width,
             height: Get.height / 4,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15),
-                color: Color(0xffe9bcac)),
+                color: const Color(0xffe9bcac)),
             child: Row(
               children: [
                 Expanded(
@@ -91,7 +91,7 @@ class LearningMenuScreen extends StatelessWidget {
                   "pdf یا کتاب",
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                      color: Color(0xffffffff), fontSize: Get.width / 16),
+                      color: const Color(0xffffffff), fontSize: Get.width / 16),
                 )),
                 SizedBox(
                   height: Get.height,

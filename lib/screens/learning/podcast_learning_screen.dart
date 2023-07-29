@@ -54,7 +54,7 @@ class PodcastLearningScreen extends StatelessWidget {
                                     borderRadius: BorderRadius.only(
                                         bottomLeft: Radius.circular(10),
                                         bottomRight: Radius.circular(10))),
-                                child: Icon(
+                                child: const Icon(
                                   Icons.headphones,
                                   color: goldColor,
                                 ),
@@ -77,7 +77,7 @@ class PodcastLearningScreen extends StatelessWidget {
                             overflow: TextOverflow.ellipsis,
                             style: TextStyle(
                                 fontSize: Get.width / 27,
-                                color: Color(0xff5f5f5f)),
+                                color: const Color(0xff5f5f5f)),
                           )),
                     ],
                   ),

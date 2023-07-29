@@ -50,7 +50,7 @@ class BookLearningScreen extends StatelessWidget {
                             overflow: TextOverflow.ellipsis,
                             style: TextStyle(
                                 fontSize: Get.width / 27,
-                                color: Color(0xff5f5f5f)),
+                                color:const Color(0xff5f5f5f)),
                           )),
                     ],
                   ),

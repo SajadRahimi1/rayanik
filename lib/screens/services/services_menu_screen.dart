@@ -12,12 +12,12 @@ class ServiceMenuScreen extends StatelessWidget {
       appBar: screensAppBar(),
       body: ListView(children: [
         Container(
-          margin: EdgeInsets.all(10),
+          margin: const EdgeInsets.all(10),
           width: Get.width,
           height: Get.height / 5.5,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15),
-              color: Color(0xffe9bcac)),
+              color: const Color(0xffe9bcac)),
           child: Row(
             children: [
               Expanded(
@@ -25,7 +25,7 @@ class ServiceMenuScreen extends StatelessWidget {
                 "طراحی وب",
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                    color: Color(0xffffffff), fontSize: Get.width / 16),
+                    color: const Color(0xffffffff), fontSize: Get.width / 16),
               )),
               SizedBox(
                 height: Get.height,
@@ -38,12 +38,12 @@ class ServiceMenuScreen extends StatelessWidget {
 
         //app
         Container(
-          margin: EdgeInsets.all(10),
+          margin: const EdgeInsets.all(10),
           width: Get.width,
           height: Get.height / 5.5,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15),
-              color: Color(0xffe9bcac)),
+              color: const Color(0xffe9bcac)),
           child: Row(
             children: [
               Expanded(
@@ -51,7 +51,7 @@ class ServiceMenuScreen extends StatelessWidget {
                 "اپلیکیشن",
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                    color: Color(0xffffffff), fontSize: Get.width / 16),
+                    color: const Color(0xffffffff), fontSize: Get.width / 16),
               )),
               SizedBox(
                 height: Get.height,
@@ -66,12 +66,12 @@ class ServiceMenuScreen extends StatelessWidget {
 
         // instagram
         Container(
-          margin: EdgeInsets.all(10),
+          margin: const EdgeInsets.all(10),
           width: Get.width,
           height: Get.height / 5.5,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15),
-              color: Color(0xffe9bcac)),
+              color: const Color(0xffe9bcac)),
           child: Row(
             children: [
               Expanded(
@@ -79,7 +79,7 @@ class ServiceMenuScreen extends StatelessWidget {
                 "اینستاگرام",
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                    color: Color(0xffffffff), fontSize: Get.width / 16),
+                    color: const Color(0xffffffff), fontSize: Get.width / 16),
               )),
               SizedBox(
                 height: Get.height,
@@ -92,12 +92,12 @@ class ServiceMenuScreen extends StatelessWidget {
 
         //support
         Container(
-          margin: EdgeInsets.all(10),
+          margin: const EdgeInsets.all(10),
           width: Get.width,
           height: Get.height / 5.5,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15),
-              color: Color(0xffe9bcac)),
+              color: const Color(0xffe9bcac)),
           child: Row(
             children: [
               Expanded(
@@ -105,7 +105,7 @@ class ServiceMenuScreen extends StatelessWidget {
                 "پشتیبانی",
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                    color: Color(0xffffffff), fontSize: Get.width / 16),
+                    color: const Color(0xffffffff), fontSize: Get.width / 16),
               )),
               SizedBox(
                 height: Get.height,
@@ -118,12 +118,12 @@ class ServiceMenuScreen extends StatelessWidget {
 
         // advisor
         Container(
-          margin: EdgeInsets.all(10),
+          margin: const EdgeInsets.all(10),
           width: Get.width,
           height: Get.height / 5.5,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15),
-              color: Color(0xffe9bcac)),
+              color: const Color(0xffe9bcac)),
           child: Row(
             children: [
               Expanded(
@@ -131,7 +131,7 @@ class ServiceMenuScreen extends StatelessWidget {
                 "مشاوره",
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                    color: Color(0xffffffff), fontSize: Get.width / 16),
+                    color: const Color(0xffffffff), fontSize: Get.width / 16),
               )),
               SizedBox(
                 height: Get.height,
