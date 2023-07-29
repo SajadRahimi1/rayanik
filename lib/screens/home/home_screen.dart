@@ -4,6 +4,7 @@ import 'package:rayanik/core/widgets/appbar_widget.dart';
 import 'package:rayanik/core/widgets/home_widget.dart';
 import 'package:rayanik/screens/collabration/collabration_form_screen.dart';
 import 'package:rayanik/screens/learning/learning_menu_screen.dart';
+import 'package:rayanik/screens/resume/resume_screen.dart';
 import 'package:rayanik/screens/services/services_menu_screen.dart';
 import 'package:rayanik/screens/startup/startup_form_screen.dart';
 
@@ -90,10 +91,13 @@ class HomeScreen extends StatelessWidget {
                     Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          const HomeWidget(
+                          HomeWidget(
                             title: "نمونه کار ها",
                             // height: Get.height / 10,
                             lottiesAsset: "assets/pictures/icons/resume2.json",
+                            onTap: () => Get.to(
+                              () => const ResumeScreen(),
+                            ),
                           ),
                           HomeWidget(
                             onTap: () => Get.to(
