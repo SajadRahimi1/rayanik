@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:rayanik/core/widgets/appbar_widget.dart';
 import 'package:rayanik/core/widgets/home_widget.dart';
 import 'package:rayanik/screens/collabration/collabration_form_screen.dart';
 import 'package:rayanik/screens/learning/learning_menu_screen.dart';
@@ -71,16 +70,15 @@ class HomeScreen extends StatelessWidget {
                           ),
                           HomeWidget(
                             onTap: () => Get.to(
-                              () => const LearningMenuScreen(),
-                            ),
+                                () => const LearningMenuScreen(),
+                                transition: Transition.leftToRight),
                             title: "آموزش",
                             // height: Get.height / 10,
                             lottiesAsset: "assets/pictures/icons/learning.json",
                           ),
                           HomeWidget(
-                            onTap: () => Get.to(
-                              () => const ServiceMenuScreen(),
-                            ),
+                            onTap: () => Get.to(() => const ServiceMenuScreen(),
+                                transition: Transition.leftToRight),
                             title: "خدمات",
                             lottiesAsset: "assets/pictures/icons/service.json",
                           ),

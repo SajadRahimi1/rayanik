@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+// import 'package:flutter_png/flutter_png.dart';
 import 'package:get/route_manager.dart';
 import 'package:rayanik/core/widgets/appbar_widget.dart';
 
@@ -30,7 +30,7 @@ class ServiceMenuScreen extends StatelessWidget {
               SizedBox(
                 height: Get.height,
                 width: Get.width / 1.8,
-                child: SvgPicture.asset("assets/pictures/images/web.svg"),
+                child: Image.asset("assets/pictures/images/web.png"),
               )
             ],
           ),
@@ -56,8 +56,8 @@ class ServiceMenuScreen extends StatelessWidget {
               SizedBox(
                 height: Get.height,
                 width: Get.width / 1.8,
-                child: SvgPicture.asset(
-                  "assets/pictures/images/app.svg",
+                child: Image.asset(
+                  "assets/pictures/images/app.png",
                 ),
               )
             ],
@@ -84,7 +84,7 @@ class ServiceMenuScreen extends StatelessWidget {
               SizedBox(
                 height: Get.height,
                 width: Get.width / 1.8,
-                child: SvgPicture.asset("assets/pictures/images/instagram.svg"),
+                child: Image.asset("assets/pictures/images/instagram.png"),
               )
             ],
           ),
@@ -110,7 +110,7 @@ class ServiceMenuScreen extends StatelessWidget {
               SizedBox(
                 height: Get.height,
                 width: Get.width / 1.8,
-                child: SvgPicture.asset("assets/pictures/images/support.svg"),
+                child: Image.asset("assets/pictures/images/support.png"),
               )
             ],
           ),
@@ -136,7 +136,7 @@ class ServiceMenuScreen extends StatelessWidget {
               SizedBox(
                 height: Get.height,
                 width: Get.width / 1.8,
-                child: SvgPicture.asset("assets/pictures/images/advisor.svg"),
+                child: Image.asset("assets/pictures/images/advisor.png"),
               )
             ],
           ),

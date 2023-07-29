@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+// import 'package:flutter_png/png.dart';
 import 'package:get/route_manager.dart';
 import 'package:rayanik/core/widgets/appbar_widget.dart';
+import 'package:rayanik/screens/learning/video_learning_screen.dart';
 
 class LearningMenuScreen extends StatelessWidget {
   const LearningMenuScreen({Key? key}) : super(key: key);
@@ -11,28 +12,32 @@ class LearningMenuScreen extends StatelessWidget {
     return Scaffold(
       appBar: screensAppBar(),
       body: Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-        Container(
-          margin: EdgeInsets.all(10),
-          width: Get.width,
-          height: Get.height / 4,
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(15),
-              color: Color(0xffe9bcac)),
-          child: Row(
-            children: [
-              Expanded(
-                  child: Text(
-                "آموزش ویدیویی",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    color: Color(0xffffffff), fontSize: Get.width / 18),
-              )),
-              SizedBox(
-                height: Get.height,
-                width: Get.width / 2,
-                child: SvgPicture.asset("assets/pictures/images/video.svg"),
-              )
-            ],
+        InkWell(
+          onTap: () => Get.to(() => const VideoLearningScreen(),
+              transition: Transition.leftToRight),
+          child: Container(
+            margin: const EdgeInsets.all(10),
+            width: Get.width,
+            height: Get.height / 4,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(15),
+                color: Color(0xffe9bcac)),
+            child: Row(
+              children: [
+                Expanded(
+                    child: Text(
+                  "آموزش ویدیویی",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      color: Color(0xffffffff), fontSize: Get.width / 18),
+                )),
+                SizedBox(
+                  height: Get.height,
+                  width: Get.width / 2,
+                  child: Image.asset("assets/pictures/images/video.png"),
+                )
+              ],
+            ),
           ),
         ),
 
@@ -56,7 +61,7 @@ class LearningMenuScreen extends StatelessWidget {
               SizedBox(
                 height: Get.height,
                 width: Get.width / 1.8,
-                child: SvgPicture.asset("assets/pictures/images/podcast.svg"),
+                child: Image.asset("assets/pictures/images/podcast.png"),
               )
             ],
           ),
@@ -82,7 +87,7 @@ class LearningMenuScreen extends StatelessWidget {
               SizedBox(
                 height: Get.height,
                 width: Get.width / 1.8,
-                child: SvgPicture.asset("assets/pictures/images/book.svg"),
+                child: Image.asset("assets/pictures/images/book.png"),
               )
             ],
           ),

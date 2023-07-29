@@ -6,6 +6,7 @@ AppBar screensAppBar({BuildContext? context, String title = ""}) => AppBar(
         title,
         style: const TextStyle(color: Color(0xff000000), fontSize: 17),
       ),
+      
       centerTitle: true,
       elevation: 5,
       iconTheme: const IconThemeData(color: Color(0xff000000)),
