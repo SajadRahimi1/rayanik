@@ -10,6 +10,7 @@ class BookLearningScreen extends StatelessWidget {
     return Scaffold(
       appBar: screensAppBar(title: 'pdf یا کتاب'),
       body: GridView.builder(
+          physics: const BouncingScrollPhysics(),
           padding: const EdgeInsets.all(8),
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 3,
