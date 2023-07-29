@@ -11,11 +11,11 @@ class VideoLearningScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: screensAppBar(title: 'آموزش ویدیویی'),
-      backgroundColor: const Color(0xff070705),
+      // backgroundColor: const Color(0xff070705),
       body: ListView.builder(
           physics: const BouncingScrollPhysics(),
           itemCount: 15,
-          padding: const EdgeInsets.all(10),
+          padding: const EdgeInsets.all(8),
           itemBuilder: (_, index) => Card(
                 elevation: 5,
                 shape: RoundedRectangleBorder(
