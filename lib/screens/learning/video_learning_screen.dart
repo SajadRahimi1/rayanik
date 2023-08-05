@@ -23,7 +23,7 @@ class VideoLearningScreen extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10)),
                 child: SizedBox(
                   width: Get.width,
-                  height: Get.height / 3,
+                  height: Get.height / 2.9,
                   child: Padding(
                     padding: const EdgeInsets.all(10),
                     child: Column(
@@ -43,6 +43,7 @@ class VideoLearningScreen extends StatelessWidget {
                               overflow: TextOverflow.ellipsis,
                             ),
                           ),
+                         const Divider(thickness: 3),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
