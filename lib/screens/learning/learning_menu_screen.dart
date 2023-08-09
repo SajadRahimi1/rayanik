@@ -4,6 +4,7 @@ import 'package:get/route_manager.dart';
 import 'package:rayanik/core/widgets/appbar_widget.dart';
 import 'package:rayanik/screens/learning/book_learning_screen.dart';
 import 'package:rayanik/screens/learning/podcast_learning_screen.dart';
+import 'package:rayanik/screens/learning/video_learning/video_home_screen.dart';
 import 'package:rayanik/screens/learning/video_learning_screen.dart';
 
 class LearningMenuScreen extends StatelessWidget {
@@ -15,7 +16,7 @@ class LearningMenuScreen extends StatelessWidget {
       appBar: screensAppBar(),
       body: Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
         InkWell(
-          onTap: () => Get.to(() => const VideoLearningScreen(),
+          onTap: () => Get.to(() => const VideoHomeLearning(),
               transition: Transition.leftToRight),
           child: Container(
             margin: const EdgeInsets.all(10),
@@ -48,12 +49,12 @@ class LearningMenuScreen extends StatelessWidget {
           onTap: () => Get.to(() => const PodcastLearningScreen(),
               transition: Transition.leftToRight),
           child: Container(
-            margin:const EdgeInsets.all(10),
+            margin: const EdgeInsets.all(10),
             width: Get.width,
             height: Get.height / 4,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15),
-                color:const Color(0xffe9bcac)),
+                color: const Color(0xffe9bcac)),
             child: Row(
               children: [
                 Expanded(
