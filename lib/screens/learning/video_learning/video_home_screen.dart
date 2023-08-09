@@ -1,6 +1,8 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:rayanik/core/widgets/appbar_widget.dart';
+import 'package:rayanik/screens/learning/video_learning/course_screen.dart';
 
 class VideoHomeLearning extends StatelessWidget {
   const VideoHomeLearning({Key? key}) : super(key: key);
@@ -9,9 +11,10 @@ class VideoHomeLearning extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        appBar: screensAppBar(),
         body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10) +
-              EdgeInsets.only(top: Get.height / 30),
+              EdgeInsets.only(top: 10),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -36,12 +39,12 @@ class VideoHomeLearning extends StatelessWidget {
                               height: Get.height)),
                       options: CarouselOptions(
                           autoPlay: true,
-                          height: Get.height / 4,
+                          height: Get.height / 4.5,
                           enlargeCenterPage: true)),
                 ),
               ),
               Text(
-                "\nدسته بندی ها",
+                "دسته بندی ها",
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 19 * MediaQuery.of(context).textScaleFactor),
@@ -50,48 +53,60 @@ class VideoHomeLearning extends StatelessWidget {
                   child: Column(
                 children: List.generate(
                     4,
-                    (index) => Row(
-                          children: [
-                            Image.asset(
-                              "assets/pictures/images/${[
-                                "web-design",
-                                "application",
-                                "programming",
-                                "ui"
-                              ][index]}.png",
-                              height: Get.height / 8,
-                              width: Get.width / 3.5,
-                              fit: BoxFit.fitWidth,
-                            ),
-                            const SizedBox(
-                              width: 15,
-                            ),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  [
-                                    "طراحی وب و سئو",
-                                    "اپلیکیشن",
-                                    "برنامه نویسی",
-                                    "طراحی"
-                                  ][index],
-                                  style: TextStyle(
-                                      fontSize: 17 *
-                                          MediaQuery.of(context)
-                                              .textScaleFactor),
-                                ),
-                                Text(
-                                  "8 آموزش",
-                                  style: TextStyle(
-                                      color: const Color(0xff9f9f9f),
-                                      fontSize: 13 *
-                                          MediaQuery.of(context)
-                                              .textScaleFactor),
-                                ),
-                              ],
-                            )
-                          ],
+                    (index) => InkWell(
+                          onTap: () => Get.to(
+                              () => CourseScreen(
+                                    title: [
+                                      "طراحی وب و سئو",
+                                      "اپلیکیشن",
+                                      "برنامه نویسی",
+                                      "طراحی"
+                                    ][index],
+                                  ),
+                              transition: Transition.leftToRight),
+                          child: Row(
+                            children: [
+                              Image.asset(
+                                "assets/pictures/images/${[
+                                  "web-design",
+                                  "application",
+                                  "programming",
+                                  "ui"
+                                ][index]}.png",
+                                height: Get.height / 8,
+                                width: Get.width / 3.5,
+                                fit: BoxFit.fitWidth,
+                              ),
+                              const SizedBox(
+                                width: 15,
+                              ),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    [
+                                      "طراحی وب و سئو",
+                                      "اپلیکیشن",
+                                      "برنامه نویسی",
+                                      "طراحی"
+                                    ][index],
+                                    style: TextStyle(
+                                        fontSize: 17 *
+                                            MediaQuery.of(context)
+                                                .textScaleFactor),
+                                  ),
+                                  Text(
+                                    "8 آموزش",
+                                    style: TextStyle(
+                                        color: const Color(0xff9f9f9f),
+                                        fontSize: 13 *
+                                            MediaQuery.of(context)
+                                                .textScaleFactor),
+                                  ),
+                                ],
+                              )
+                            ],
+                          ),
                         )),
               ))
             ],
