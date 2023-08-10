@@ -1,3 +1,9 @@
+
+## Count lines of codes: 1822
+## Number of Files:: 19
+## File with most lines of code: course_screen.dart
+## Most lines of code in one file: 487
+
 # rayanik
 
 A new Flutter project.
