@@ -1,7 +1,5 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:rayanik/core/constants/colors.dart';
 import 'package:rayanik/core/widgets/appbar_widget.dart';
 import 'package:rayanik/core/widgets/widgets_list.dart';
 
@@ -12,9 +10,10 @@ class BookHomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-          backgroundColor: Color(0xfff0f3f5),
+          backgroundColor: const Color(0xfff0f3f5),
           appBar: screensAppBar(),
           body: ListView(
+            physics: const BouncingScrollPhysics(),
             children: [
               Image.asset(
                 "assets/pictures/images/ebook-banner.png",
@@ -22,20 +21,20 @@ class BookHomeScreen extends StatelessWidget {
                 height: Get.height / 4,
                 fit: BoxFit.fill,
               ),
-              SizedBox( 
+              const SizedBox(
                 height: 20,
               ),
-              WidgetsList(
+              const WidgetsList(
                 title: "تازه ترین ها",
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
-              WidgetsList(title: "برگزیده ها"),
-              SizedBox(
+              const WidgetsList(title: "برگزیده ها"),
+              const SizedBox(
                 height: 20,
               ),
-              WidgetsList(title: "بیشترین دانلود")
+              const WidgetsList(title: "بیشترین دانلود")
             ],
           )),
     );
