@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 
 class WidgetsList extends StatelessWidget {
-  const WidgetsList({Key? key, required this.title}) : super(key: key);
+  const WidgetsList({Key? key, required this.title,this.onAllClicked}) : super(key: key);
   final String title;
+  final void Function()? onAllClicked;
 
   @override
   Widget build(BuildContext context) {
@@ -27,11 +28,15 @@ class WidgetsList extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                         fontSize: 17 * MediaQuery.of(context).textScaleFactor),
                   ),
-                  Text(
-                    "مشاهده همه",
-                    style: TextStyle(
-                        color: const Color(0xff9f9f9f),
-                        fontSize: 15 * MediaQuery.of(context).textScaleFactor),
+                  InkWell(
+                    onTap: onAllClicked,
+                    child: Text(
+                      "مشاهده همه",
+                      style: TextStyle(
+                          color: const Color(0xff9f9f9f),
+                          fontSize:
+                              15 * MediaQuery.of(context).textScaleFactor),
+                    ),
                   ),
                 ],
               ),
