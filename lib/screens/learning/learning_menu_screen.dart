@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 import 'package:rayanik/core/widgets/appbar_widget.dart';
 import 'package:rayanik/screens/learning/book_learning_screen.dart';
+import 'package:rayanik/screens/learning/podcast/podcast_home_screen.dart';
 import 'package:rayanik/screens/learning/podcast_learning_screen.dart';
 import 'package:rayanik/screens/learning/video_learning/video_home_screen.dart';
 import 'package:rayanik/screens/learning/video_learning_screen.dart';
@@ -46,8 +47,6 @@ class LearningMenuScreen extends StatelessWidget {
 
         // podcast
         InkWell(
-          onTap: () => Get.to(() => const PodcastLearningScreen(),
-              transition: Transition.leftToRight),
           child: Container(
             margin: const EdgeInsets.all(10),
             width: Get.width,
@@ -76,7 +75,7 @@ class LearningMenuScreen extends StatelessWidget {
 
         // book
         InkWell(
-          onTap: () => Get.to(() => const BookLearningScreen(),
+          onTap: () => Get.to(() => const BookHomeScreen(),
               transition: Transition.leftToRight),
           child: Container(
             margin: const EdgeInsets.all(10),
