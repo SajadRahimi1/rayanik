@@ -95,14 +95,15 @@ class CourseScreen extends StatelessWidget {
                             borderRadius: BorderRadius.circular(20)),
                       ),
                     ),
+
                     SizedBox(
                       height: Get.height / 30,
                     ),
                   ],
                 ),
               ),
-              // reset of screen
 
+              // reset of screen
               SizedBox(
                 width: Get.width,
                 height: Get.height / 10,
