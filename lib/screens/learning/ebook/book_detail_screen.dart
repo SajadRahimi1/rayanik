@@ -21,7 +21,7 @@ class BookDetailScreen extends StatelessWidget {
                 // top of screen
                 SizedBox(
                   width: Get.width,
-                  height: Get.height / 4,
+                  height: Get.height / 4, 
                   child: Row(children: [
                     ClipRRect(
                       borderRadius: BorderRadius.circular(15),
@@ -105,6 +105,7 @@ class BookDetailScreen extends StatelessWidget {
               ]),
             ),
           ),
+
           // button
           InkWell(
             onTap: () async {},
