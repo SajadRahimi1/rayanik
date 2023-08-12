@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:persian_number_utility/persian_number_utility.dart';
+import 'package:rayanik/core/widgets/course_widget.dart';
 import 'package:rayanik/screens/learning/video_learning/show_video_screen.dart';
 
 class CourseScreen extends StatelessWidget {
@@ -150,339 +151,322 @@ class CourseScreen extends StatelessWidget {
               Expanded(
                   child: TabBarView(
                       physics: const NeverScrollableScrollPhysics(),
-                      children: List.generate(
-                          3,
-                          (index) => Container(
-                                margin:
-                                    const EdgeInsets.symmetric(horizontal: 10),
-                                color: [null, Colors.red, Colors.green][index],
-                                child: ListView(
-                                  // crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Text(
-                                          "هفته اول",
-                                          style: TextStyle(
-                                              fontSize: 19 *
-                                                  MediaQuery.of(context)
-                                                      .textScaleFactor),
-                                        ),
-                                        Text(
-                                          "همه",
-                                          style: TextStyle(
-                                              color: Colors.grey,
-                                              fontSize: 16 *
-                                                  MediaQuery.of(context)
-                                                      .textScaleFactor),
-                                        ),
-                                      ],
-                                    ),
-                                    const SizedBox(
-                                      height: 10,
-                                    ),
-                                    SizedBox(
-                                      width: Get.width,
-                                      height: Get.height / 3.8,
-                                      child: ListView.builder(
-                                          physics:
-                                              const BouncingScrollPhysics(),
-                                          itemCount: 6,
-                                          scrollDirection: Axis.horizontal,
-                                          itemBuilder: (_, index) => InkWell(
-                                                onTap: () => Get.to(
-                                                    () => ShowVideoScreen(
-                                                          courseIndex:
-                                                              "درس ${index + 1}",
-                                                          title:
-                                                              "رگرسیون خطی تک متغیر",
-                                                        )),
-                                                child: Container(
-                                                  margin: const EdgeInsets.only(
-                                                      left: 5),
-                                                  width: Get.width / 2.3,
-                                                  height: Get.height,
-                                                  decoration: BoxDecoration(
-                                                      color: index == 1
-                                                          ? const Color(
-                                                              0xff414865)
-                                                          : const Color(
-                                                              0xffefefef),
-                                                      borderRadius:
-                                                          const BorderRadius
-                                                                      .all(
-                                                                  Radius
-                                                                      .circular(
-                                                                          10)) +
-                                                              const BorderRadius
-                                                                      .only(
-                                                                  bottomRight: Radius
-                                                                      .circular(
-                                                                          15))),
-                                                  child: Stack(children: [
-                                                    SizedBox.expand(
-                                                        child: Column(
-                                                      children: [
-                                                        // image
-                                                        Expanded(
-                                                            child: ClipRRect(
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(15),
-                                                          child: Image.asset(
-                                                            "assets/pictures/images/video_test.png",
-                                                            width: Get.width,
-                                                            height: Get.height,
-                                                            fit: BoxFit.cover,
-                                                          ),
-                                                        )),
-                                                        // titles
-                                                        Expanded(
-                                                            child: Padding(
-                                                                padding:
-                                                                    const EdgeInsets
-                                                                            .only(
-                                                                        left: 4,
-                                                                        right:
-                                                                            10),
-                                                                child: Column(
-                                                                  mainAxisAlignment:
-                                                                      MainAxisAlignment
-                                                                          .spaceEvenly,
-                                                                  crossAxisAlignment:
-                                                                      CrossAxisAlignment
-                                                                          .start,
-                                                                  children: [
-                                                                    // title text
-                                                                    Text(
-                                                                      "درس ${index + 1}"
-                                                                          .toPersianDigit(),
-                                                                      style: TextStyle(
-                                                                          fontSize: 17 *
-                                                                              MediaQuery.of(context)
-                                                                                  .textScaleFactor,
-                                                                          fontWeight: FontWeight
-                                                                              .bold,
-                                                                          color: index == 1
-                                                                              ? Colors.white
-                                                                              : const Color(0xff414865)),
-                                                                    ),
-                                                                    // second text
-                                                                    Text(
-                                                                      "رگرسیون خطی تک متغیر",
-                                                                      maxLines:
-                                                                          2,
-                                                                      overflow:
-                                                                          TextOverflow
-                                                                              .ellipsis,
-                                                                      style: TextStyle(
-                                                                          fontSize: 15 *
-                                                                              MediaQuery.of(context)
-                                                                                  .textScaleFactor,
-                                                                          color: index == 1
-                                                                              ? Colors.white
-                                                                              : const Color(0xff414865)),
-                                                                    ),
-                                                                  ],
-                                                                ))),
-                                                      ],
-                                                    )),
-                                                    // play button
-                                                    Align(
-                                                      alignment:
-                                                          Alignment.centerLeft,
-                                                      child: Padding(
-                                                        padding:
-                                                            const EdgeInsets
-                                                                .only(left: 15),
-                                                        child: CircleAvatar(
-                                                          backgroundColor:
-                                                              index == 0
-                                                                  ? const Color(
-                                                                      0xff414865)
-                                                                  : Colors
-                                                                      .white,
-                                                          child: Center(
-                                                              child: Icon(
-                                                            index == 0
-                                                                ? Icons.done
-                                                                : Icons
-                                                                    .play_arrow,
-                                                            color: index == 0
-                                                                ? Colors.white
-                                                                : const Color(
-                                                                    0xff414865),
-                                                          )),
-                                                        ),
-                                                      ),
-                                                    )
-                                                  ]),
-                                                ),
-                                              )),
-                                    ),
+                      children: [
+                    // courses screen
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 10),
+                      child: ListView(
+                        physics: const BouncingScrollPhysics(),
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "هفته اول",
+                                style: TextStyle(
+                                    fontSize: 19 *
+                                        MediaQuery.of(context).textScaleFactor),
+                              ),
+                              // Text(
+                              //   "همه",
+                              //   style: TextStyle(
+                              //       color: Colors.grey,
+                              //       fontSize: 16 *
+                              //           MediaQuery.of(context).textScaleFactor),
+                              // ),
+                            ],
+                          ),
+                          const SizedBox(
+                            height: 10,
+                          ),
+                          SizedBox(
+                            width: Get.width,
+                            height: Get.height / 3.8,
+                            child: ListView.builder(
+                                physics: const BouncingScrollPhysics(),
+                                itemCount: 6,
+                                scrollDirection: Axis.horizontal,
+                                itemBuilder: (_, index) => InkWell(
+                                    onTap: () => Get.to(() => ShowVideoScreen(
+                                          courseIndex: "درس ${index + 1}",
+                                          title: "رگرسیون خطی تک متغیر",
+                                        )),
+                                    child: CourseWidget(
+                                        isCurrent: index == 1,
+                                        title: "درس ${index + 1}",
+                                        description: "توضیحات درس ${index + 1}",
+                                        isDone: index == 0))),
+                          ),
 
-                                    // second week
-                                    const SizedBox(
-                                      height: 30,
-                                    ),
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Text(
-                                          "هفته دوم",
-                                          style: TextStyle(
-                                              fontSize: 19 *
-                                                  MediaQuery.of(context)
-                                                      .textScaleFactor),
-                                        ),
-                                        Text(
-                                          "همه",
-                                          style: TextStyle(
-                                              color: Colors.grey,
-                                              fontSize: 16 *
-                                                  MediaQuery.of(context)
-                                                      .textScaleFactor),
-                                        ),
-                                      ],
-                                    ),
-                                    const SizedBox(
-                                      height: 10,
-                                    ),
-                                    SizedBox(
-                                      width: Get.width,
-                                      height: Get.height / 3.8,
-                                      child: ListView.builder(
-                                          physics:
-                                              const BouncingScrollPhysics(),
-                                          itemCount: 6,
-                                          scrollDirection: Axis.horizontal,
-                                          itemBuilder: (_, index) => Container(
-                                                margin: const EdgeInsets.only(
-                                                    left: 5),
-                                                width: Get.width / 2.3,
+                          // second week
+                          const SizedBox(
+                            height: 30,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "هفته دوم",
+                                style: TextStyle(
+                                    fontSize: 19 *
+                                        MediaQuery.of(context).textScaleFactor),
+                              ),
+                              // Text(
+                              //   "همه",
+                              //   style: TextStyle(
+                              //       color: Colors.grey,
+                              //       fontSize: 16 *
+                              //           MediaQuery.of(context).textScaleFactor),
+                              // ),
+                            ],
+                          ),
+                          const SizedBox(
+                            height: 10,
+                          ),
+                          SizedBox(
+                            width: Get.width,
+                            height: Get.height / 3.8,
+                            child: ListView.builder(
+                                physics: const BouncingScrollPhysics(),
+                                itemCount: 6,
+                                scrollDirection: Axis.horizontal,
+                                itemBuilder: (_, index) => CourseWidget(
+                                    isCurrent: false,
+                                    title: "درس ${index + 1}",
+                                    description: "توضیحات درس ${index + 1}",
+                                    isDone: false)),
+                          )
+                        ],
+                      ),
+                    ),
+                    const SizedBox(),
+
+                    // files tab screen
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 10),
+                      child: ListView(
+                        physics: const BouncingScrollPhysics(),
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "هفته اول",
+                                style: TextStyle(
+                                    fontSize: 19 *
+                                        MediaQuery.of(context).textScaleFactor),
+                              ),
+                              // Text(
+                              //   "همه",
+                              //   style: TextStyle(
+                              //       color: Colors.grey,
+                              //       fontSize: 16 *
+                              //           MediaQuery.of(context).textScaleFactor),
+                              // ),
+                            ],
+                          ),
+                          const SizedBox(
+                            height: 10,
+                          ),
+                          SizedBox(
+                            width: Get.width,
+                            height: Get.height / 3.8,
+                            child: ListView.builder(
+                                physics: const BouncingScrollPhysics(),
+                                itemCount: 6,
+                                scrollDirection: Axis.horizontal,
+                                itemBuilder: (_, index) => InkWell(
+                                      onTap: () => Get.to(() => ShowVideoScreen(
+                                            courseIndex: "درس ${index + 1}",
+                                            title: "رگرسیون خطی تک متغیر",
+                                          )),
+                                      child: Container(
+                                        margin: const EdgeInsets.only(left: 5),
+                                        width: Get.width / 2.3,
+                                        height: Get.height,
+                                        decoration: BoxDecoration(
+                                            color: const Color(0xffefefef),
+                                            borderRadius: const BorderRadius
+                                                    .all(Radius.circular(10)) +
+                                                const BorderRadius.only(
+                                                    bottomRight:
+                                                        Radius.circular(15))),
+                                        child: Column(
+                                          children: [
+                                            // image
+                                            Expanded(
+                                                child: ClipRRect(
+                                              borderRadius:
+                                                  BorderRadius.circular(15),
+                                              child: Image.asset(
+                                                "assets/pictures/images/video_test.png",
+                                                width: Get.width,
                                                 height: Get.height,
-                                                decoration: BoxDecoration(
-                                                    color: index == 1
-                                                        ? const Color(
-                                                            0xff414865)
-                                                        : const Color(
-                                                            0xffefefef),
-                                                    borderRadius:
-                                                        const BorderRadius.all(
-                                                                Radius.circular(
-                                                                    10)) +
-                                                            const BorderRadius
-                                                                    .only(
-                                                                bottomRight: Radius
-                                                                    .circular(
-                                                                        15))),
-                                                child: Stack(children: [
-                                                  SizedBox.expand(
-                                                      child: Column(
-                                                    children: [
-                                                      // image
-                                                      Expanded(
-                                                          child: ClipRRect(
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(15),
-                                                        child: Image.asset(
-                                                          "assets/pictures/images/video_test.png",
-                                                          width: Get.width,
-                                                          height: Get.height,
-                                                          fit: BoxFit.cover,
+                                                fit: BoxFit.cover,
+                                              ),
+                                            )),
+                                            // titles
+                                            Expanded(
+                                                child: Padding(
+                                                    padding:
+                                                        const EdgeInsets.only(
+                                                            left: 4, right: 10),
+                                                    child: Column(
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .spaceEvenly,
+                                                      crossAxisAlignment:
+                                                          CrossAxisAlignment
+                                                              .start,
+                                                      children: [
+                                                        // title text
+                                                        Text(
+                                                          "درس ${index + 1}"
+                                                              .toPersianDigit(),
+                                                          style: TextStyle(
+                                                              fontSize: 17 *
+                                                                  MediaQuery.of(
+                                                                          context)
+                                                                      .textScaleFactor,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .bold,
+                                                              color: const Color(
+                                                                  0xff414865)),
                                                         ),
-                                                      )),
-                                                      // titles
-                                                      Expanded(
-                                                          child: Padding(
-                                                              padding:
-                                                                  const EdgeInsets
-                                                                          .only(
-                                                                      left: 4,
-                                                                      right:
-                                                                          10),
-                                                              child: Column(
-                                                                mainAxisAlignment:
-                                                                    MainAxisAlignment
-                                                                        .spaceEvenly,
-                                                                crossAxisAlignment:
-                                                                    CrossAxisAlignment
-                                                                        .start,
-                                                                children: [
-                                                                  // title text
-                                                                  Text(
-                                                                    "درس ${index + 1}"
-                                                                        .toPersianDigit(),
-                                                                    style: TextStyle(
-                                                                        fontSize: 17 *
-                                                                            MediaQuery.of(context)
-                                                                                .textScaleFactor,
-                                                                        fontWeight:
-                                                                            FontWeight
-                                                                                .bold,
-                                                                        color: index ==
-                                                                                1
-                                                                            ? Colors.white
-                                                                            : const Color(0xff414865)),
-                                                                  ),
-                                                                  // second text
-                                                                  Text(
-                                                                    "رگرسیون خطی تک متغیر",
-                                                                    maxLines: 2,
-                                                                    overflow:
-                                                                        TextOverflow
-                                                                            .ellipsis,
-                                                                    style: TextStyle(
-                                                                        fontSize: 15 *
-                                                                            MediaQuery.of(context)
-                                                                                .textScaleFactor,
-                                                                        color: index ==
-                                                                                1
-                                                                            ? Colors.white
-                                                                            : const Color(0xff414865)),
-                                                                  ),
-                                                                ],
-                                                              ))),
-                                                    ],
-                                                  )),
-                                                  // play button
-                                                  Align(
-                                                    alignment:
-                                                        Alignment.centerLeft,
-                                                    child: Padding(
-                                                      padding:
-                                                          const EdgeInsets.only(
-                                                              left: 15),
-                                                      child: CircleAvatar(
-                                                        backgroundColor:
-                                                            index == 0
-                                                                ? const Color(
-                                                                    0xff414865)
-                                                                : Colors.white,
-                                                        child: Center(
-                                                            child: Icon(
-                                                          index == 0
-                                                              ? Icons.done
-                                                              : Icons
-                                                                  .play_arrow,
-                                                          color: index == 0
-                                                              ? Colors.white
-                                                              : const Color(
-                                                                  0xff414865),
-                                                        )),
+                                                        // second text
+                                                        Text(
+                                                          "رگرسیون خطی تک متغیر",
+                                                          maxLines: 2,
+                                                          overflow: TextOverflow
+                                                              .ellipsis,
+                                                          style: TextStyle(
+                                                              fontSize: 15 *
+                                                                  MediaQuery.of(
+                                                                          context)
+                                                                      .textScaleFactor,
+                                                              color: const Color(
+                                                                  0xff414865)),
+                                                        ),
+                                                      ],
+                                                    ))),
+                                          ],
+                                        ),
+                                      ),
+                                    )),
+                          ),
+
+                          // second week
+                          const SizedBox(
+                            height: 30,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "هفته دوم",
+                                style: TextStyle(
+                                    fontSize: 19 *
+                                        MediaQuery.of(context).textScaleFactor),
+                              ),
+                              // Text(
+                              //   "همه",
+                              //   style: TextStyle(
+                              //       color: Colors.grey,
+                              //       fontSize: 16 *
+                              //           MediaQuery.of(context).textScaleFactor),
+                              // ),
+                            ],
+                          ),
+                          const SizedBox(
+                            height: 10,
+                          ),
+
+                          SizedBox(
+                            width: Get.width,
+                            height: Get.height / 3.8,
+                            child: ListView.builder(
+                                physics: const BouncingScrollPhysics(),
+                                itemCount: 6,
+                                scrollDirection: Axis.horizontal,
+                                itemBuilder: (_, index) => Container(
+                                      margin: const EdgeInsets.only(left: 5),
+                                      width: Get.width / 2.3,
+                                      height: Get.height,
+                                      decoration: BoxDecoration(
+                                          color: const Color(0xffefefef),
+                                          borderRadius: const BorderRadius.all(
+                                                  Radius.circular(10)) +
+                                              const BorderRadius.only(
+                                                  bottomRight:
+                                                      Radius.circular(15))),
+                                      child: Column(
+                                        children: [
+                                          // image
+                                          Expanded(
+                                              child: ClipRRect(
+                                            borderRadius:
+                                                BorderRadius.circular(15),
+                                            child: Image.asset(
+                                              "assets/pictures/images/video_test.png",
+                                              width: Get.width,
+                                              height: Get.height,
+                                              fit: BoxFit.cover,
+                                            ),
+                                          )),
+
+                                          // titles
+                                          Expanded(
+                                              child: Padding(
+                                                  padding:
+                                                      const EdgeInsets.only(
+                                                          left: 4, right: 10),
+                                                  child: Column(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .spaceEvenly,
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .start,
+                                                    children: [
+                                                      // title text
+                                                      Text(
+                                                        "درس ${index + 1}"
+                                                            .toPersianDigit(),
+                                                        style: TextStyle(
+                                                            fontSize: 17 *
+                                                                MediaQuery.of(
+                                                                        context)
+                                                                    .textScaleFactor,
+                                                            fontWeight:
+                                                                FontWeight.bold,
+                                                            color: const Color(
+                                                                0xff414865)),
                                                       ),
-                                                    ),
-                                                  )
-                                                ]),
-                                              )),
-                                    )
-                                  ],
-                                ),
-                              ))))
+                                                      // second text
+                                                      Text(
+                                                        "رگرسیون خطی تک متغیر",
+                                                        maxLines: 2,
+                                                        overflow: TextOverflow
+                                                            .ellipsis,
+                                                        style: TextStyle(
+                                                            fontSize: 15 *
+                                                                MediaQuery.of(
+                                                                        context)
+                                                                    .textScaleFactor,
+                                                            color: const Color(
+                                                                0xff414865)),
+                                                      ),
+                                                    ],
+                                                  ))),
+                                        ],
+                                      ),
+                                    )),
+                          )
+                        ],
+                      ),
+                    ),
+                  ]))
             ],
           ),
         ),
