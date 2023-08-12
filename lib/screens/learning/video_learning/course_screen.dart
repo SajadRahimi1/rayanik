@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:persian_number_utility/persian_number_utility.dart';
 import 'package:rayanik/core/widgets/course_widget.dart';
+import 'package:rayanik/screens/learning/video_learning/download_files_screen.dart';
 import 'package:rayanik/screens/learning/video_learning/show_video_screen.dart';
 
 class CourseScreen extends StatelessWidget {
@@ -276,10 +277,8 @@ class CourseScreen extends StatelessWidget {
                                 itemCount: 6,
                                 scrollDirection: Axis.horizontal,
                                 itemBuilder: (_, index) => InkWell(
-                                      onTap: () => Get.to(() => ShowVideoScreen(
-                                            courseIndex: "درس ${index + 1}",
-                                            title: "رگرسیون خطی تک متغیر",
-                                          )),
+                                      onTap: () => Get.to(
+                                          () => const DownloadFilesScreen()),
                                       child: Container(
                                         margin: const EdgeInsets.only(left: 5),
                                         width: Get.width / 2.3,

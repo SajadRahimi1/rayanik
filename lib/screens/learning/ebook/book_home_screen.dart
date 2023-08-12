@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:rayanik/core/widgets/appbar_widget.dart';
 import 'package:rayanik/core/widgets/widgets_list.dart';
+import 'package:rayanik/screens/learning/ebook/book_detail_screen.dart';
 import 'package:rayanik/screens/learning/ebook/book_learning_screen.dart';
 
 class BookHomeScreen extends StatelessWidget {
@@ -27,21 +28,31 @@ class BookHomeScreen extends StatelessWidget {
               ),
               WidgetsList(
                 title: "تازه ترین ها",
-                onAllClicked: () => Get.to(() =>const BookLearningScreen()),
+                onAllClicked: () => Get.to(
+                  () => const BookLearningScreen(),
+                ),
+                onBookClicked: () =>
+                    Get.to(() => const BookDetailScreen(title: "مادام بوآری")),
               ),
               const SizedBox(
                 height: 20,
               ),
               WidgetsList(
                 title: "برگزیده ها",
-                onAllClicked: () => Get.to(() =>const BookLearningScreen()),
+                onAllClicked: () => Get.to(() => const BookLearningScreen()),
+                onBookClicked: () =>
+                    Get.to(() =>const BookDetailScreen(title: "مادام بوآری")),
               ),
               const SizedBox(
                 height: 20,
               ),
               WidgetsList(
                 title: "بیشترین دانلود",
-                onAllClicked: () => Get.to(() =>const BookLearningScreen()),
+                onAllClicked: () => Get.to(
+                  () => const BookLearningScreen(),
+                ),
+                onBookClicked: () =>
+                    Get.to(() => const BookDetailScreen(title: "مادام بوآری")),
               )
             ],
           )),
