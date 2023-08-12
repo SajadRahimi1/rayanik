@@ -12,7 +12,10 @@ class WebsiteTypeScreen extends StatelessWidget {
       appBar: screensAppBar(),
       body: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
         InkWell(
-          onTap: () => Get.to(() => const WebPriceScreen(isShop: true,)),
+          onTap: () => Get.to(() => const WebPriceScreen(
+                isShop: true,
+                title: "سایت فروشگاهی",
+              )),
           child: Container(
             margin: const EdgeInsets.all(10),
             width: Get.width,
@@ -24,7 +27,7 @@ class WebsiteTypeScreen extends StatelessWidget {
               children: [
                 Expanded(
                     child: Text(
-                  "طراحی تعرفه های سایت فروشگاهی",
+                  "طراحی سایت فروشگاهی",
                   textAlign: TextAlign.center,
                   style: TextStyle(
                       color: const Color(0xffffffff),
@@ -42,8 +45,11 @@ class WebsiteTypeScreen extends StatelessWidget {
         SizedBox(
           height: Get.height / 10,
         ),
-         InkWell(
-          onTap: () => Get.to(() => const WebPriceScreen(isShop: false,)),
+        InkWell(
+          onTap: () => Get.to(() => const WebPriceScreen(
+                isShop: false,
+                title: "سایت شرکتی",
+              )),
           child: Container(
             margin: const EdgeInsets.all(10),
             width: Get.width,

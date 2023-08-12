@@ -4,8 +4,10 @@ import 'package:rayanik/core/widgets/appbar_widget.dart';
 import 'package:rayanik/screens/services/website/web_plans_screen.dart';
 
 class WebPriceScreen extends StatelessWidget {
-  const WebPriceScreen({Key? key, required this.isShop}) : super(key: key);
+  const WebPriceScreen({Key? key, required this.isShop, required this.title})
+      : super(key: key);
   final bool isShop;
+  final String title;
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +15,7 @@ class WebPriceScreen extends StatelessWidget {
       child: DefaultTabController(
         length: 5,
         child: Scaffold(
-            appBar: screensAppBar(),
+            appBar: screensAppBar(title: title),
             body: Column(
               children: [
                 const SizedBox(

@@ -32,6 +32,7 @@ class WebPlansScreen extends StatelessWidget {
         ),
         Expanded(
             child: GridView.builder(
+                physics: const BouncingScrollPhysics(),
                 padding: const EdgeInsets.symmetric(horizontal: 10),
                 itemCount: items.length,
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
