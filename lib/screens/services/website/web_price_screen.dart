@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:rayanik/core/constants/web_constants.dart';
 import 'package:rayanik/core/widgets/appbar_widget.dart';
+import 'package:rayanik/screens/services/website/web_plans_screen.dart';
 
 class WebPriceScreen extends StatelessWidget {
   const WebPriceScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    List plan1List = plan1.split('\n');
     return SafeArea(
       child: DefaultTabController(
         length: 5,
@@ -26,94 +26,32 @@ class WebPriceScreen extends StatelessWidget {
                     child: TabBarView(
                   physics: const NeverScrollableScrollPhysics(),
                   children: [
-                    Column(
-                      children: [
-                        Text(
-                          "پلن حمایتی",
-                          style: TextStyle(
-                              color: Color(0xffbc8971),
-                              fontWeight: FontWeight.bold,
-                              fontSize: 22),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 8.0),
-                          child: Text(
-                            "7,000,000 تومان",
-                            style: TextStyle(
-                                color: Color(0xffbc8971), fontSize: 22),
-                          ),
-                        ),
-                        Expanded(
-                            child: GridView.builder(
-                                padding:
-                                    const EdgeInsets.symmetric(horizontal: 10),
-                                itemCount: plan1List.length,
-                                gridDelegate:
-                                    const SliverGridDelegateWithFixedCrossAxisCount(
-                                        crossAxisCount: 2),
-                                itemBuilder: (_, index) => Container(
-                                      padding: const EdgeInsets.only(left: 5),
-                                      decoration: BoxDecoration(
-                                        border: Border.all(
-                                            width: 2, color: Color(0xffbc8971)),
-                                      ),
-                                      child: Row(
-                                        children: [
-                                          index < 21
-                                              ? const Icon(
-                                                  Icons.done,
-                                                  color: Colors.green,
-                                                )
-                                              : const Icon(
-                                                  Icons.close,
-                                                  color: Colors.red,
-                                                ),
-                                          Expanded(
-                                              child: Text(plan1List[index],
-                                                  maxLines: 4,
-                                                  overflow:
-                                                      TextOverflow.ellipsis,
-                                                  textAlign: TextAlign.justify))
-                                        ],
-                                      ),
-                                    )))
-                      ],
+                    WebPlansScreen(
+                        planTitle: "پلن حمایتی",
+                        items: plan1.split('\n'),
+                        price: "7,000,000 تومان"),
+                    WebPlansScreen(
+                      planTitle: "پلن اقتصادی",
+                      items: plan2.split('\n'),
+                      price: "10,000,000 تومان",
+                      lastEnableIndex: 27,
                     ),
-                    Column(
-                      children: [
-                        Text(
-                          "پلن اقتصادی",
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 22),
-                        )
-                      ],
+                    WebPlansScreen(
+                      planTitle: "پلن استاندارد",
+                      items: plan3.split('\n'),
+                      price: "14,000,000 تومان",
+                      lastEnableIndex: 35,
                     ),
-                    Column(
-                      children: [
-                        Text(
-                          "پلن استاندارد",
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 22),
-                        )
-                      ],
+                    WebPlansScreen(
+                      planTitle: "پلن ویژه",
+                      items: plan4.split('\n'),
+                      price: "19,000,000 تومان",
+                      lastEnableIndex: 43,
                     ),
-                    Column(
-                      children: [
-                        Text(
-                          "پلن ویژه",
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 22),
-                        )
-                      ],
-                    ),
-                    Column(
-                      children: [
-                        Text(
-                          "پلن VIP",
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 22),
-                        )
-                      ],
+                    WebPlansScreen(
+                      planTitle: "پلن VIP",
+                      items: plan5.split('\n'),
+                      price: "25,000,000 تومان",
                     ),
                   ],
                 ))
