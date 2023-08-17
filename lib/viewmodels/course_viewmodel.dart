@@ -5,6 +5,7 @@ import 'package:rayanik/models/models/course_model.dart';
 
 class CourseViewModel extends GetxController with StateMixin {
   List<CourseModel> courses = [];
+  List<String> categories = ["web", "application", "programming", "design"];
 
   @override
   void onInit() async {
@@ -24,4 +25,8 @@ class CourseViewModel extends GetxController with StateMixin {
       networkErrorMessage();
     }
   }
+
+  List<CourseModel> getByCategory(int index) => courses
+      .where((element) => element.category == categories[index])
+      .toList();
 }

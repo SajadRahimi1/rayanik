@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:persian_number_utility/persian_number_utility.dart';
 import 'package:rayanik/core/widgets/course_widget.dart';
+import 'package:rayanik/models/models/course_model.dart';
 import 'package:rayanik/screens/learning/video_learning/download_files_screen.dart';
 import 'package:rayanik/screens/learning/video_learning/show_video_screen.dart';
 
 class CourseScreen extends StatelessWidget {
-  const CourseScreen({Key? key, required this.title}) : super(key: key);
-  final String title;
+  const CourseScreen({Key? key, required this.courseModel}) : super(key: key);
+  final CourseModel courseModel;
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +57,7 @@ class CourseScreen extends StatelessWidget {
                     const Spacer(),
                     //title
                     Text(
-                      title,
+                      courseModel.title??"",
                       style: TextStyle(
                           color: Colors.white,
                           fontSize:
@@ -118,7 +119,7 @@ class CourseScreen extends StatelessWidget {
                     indicatorColor: Colors.white,
                     // indicatorColor: Color(0xff414865),
                     tabs: List.generate(
-                        3,
+                        courseModel.lessons?.length??0,
                         (index) => Obx(
                               () => tabSelected.value == index
                                   ? Container(

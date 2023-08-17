@@ -1,3 +1,4 @@
+import 'package:rayanik/core/constants/urls.dart';
 
 class CourseModel {
   String? title;
@@ -10,15 +11,28 @@ class CourseModel {
   String? createdAt;
   String? updatedAt;
 
-  CourseModel({this.title, this.category, this.price, this.weeksCount, this.imageUrl, this.lessons, this.id, this.createdAt, this.updatedAt});
+  CourseModel(
+      {this.title,
+      this.category,
+      this.price,
+      this.weeksCount,
+      this.imageUrl,
+      this.lessons,
+      this.id,
+      this.createdAt,
+      this.updatedAt});
 
   CourseModel.fromJson(Map<String, dynamic> json) {
     title = json["title"];
     category = json["category"];
     price = json["price"];
     weeksCount = json["weeksCount"];
-    imageUrl = json["imageUrl"];
-    lessons = json["lessons"] == null ? null : (json["lessons"] as List).map((e) => Lessons.fromJson(e)).toList();
+    imageUrl = json["imageUrl"] == null
+        ? null
+        : '$baseUrl/uploads/${json["imageUrl"]}';
+    lessons = json["lessons"] == null
+        ? null
+        : (json["lessons"] as List).map((e) => Lessons.fromJson(e)).toList();
     id = json["Id"];
     createdAt = json["CreatedAt"];
     updatedAt = json["UpdatedAt"];
@@ -31,7 +45,7 @@ class CourseModel {
     _data["price"] = price;
     _data["weeksCount"] = weeksCount;
     _data["imageUrl"] = imageUrl;
-    if(lessons != null) {
+    if (lessons != null) {
       _data["lessons"] = lessons?.map((e) => e.toJson()).toList();
     }
     _data["Id"] = id;
@@ -52,7 +66,16 @@ class Lessons {
   String? createdAt;
   String? updatedAt;
 
-  Lessons({this.courseId, this.title, this.description, this.imageUrl, this.videoUrl, this.weekNumber, this.id, this.createdAt, this.updatedAt});
+  Lessons(
+      {this.courseId,
+      this.title,
+      this.description,
+      this.imageUrl,
+      this.videoUrl,
+      this.weekNumber,
+      this.id,
+      this.createdAt,
+      this.updatedAt});
 
   Lessons.fromJson(Map<String, dynamic> json) {
     courseId = json["courseId"];
