@@ -6,10 +6,11 @@ class CourseWidget extends StatelessWidget {
       required this.isCurrent,
       required this.title,
       required this.description,
-      required this.isDone})
+      required this.isDone,
+      required this.imageUrl})
       : super(key: key);
   final bool isCurrent, isDone;
-  final String title, description;
+  final String title, description, imageUrl;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +19,7 @@ class CourseWidget extends StatelessWidget {
       width: MediaQuery.of(context).size.width / 2.3,
       height: MediaQuery.of(context).size.height,
       decoration: BoxDecoration(
-          color: isCurrent ? const Color(0xff414865) : const Color(0xffefefef),
+          color: const Color(0xfff5f5f5),
           borderRadius: const BorderRadius.all(Radius.circular(10)) +
               const BorderRadius.only(bottomRight: Radius.circular(15))),
       child: Stack(children: [
@@ -29,46 +30,28 @@ class CourseWidget extends StatelessWidget {
             Expanded(
                 child: ClipRRect(
               borderRadius: BorderRadius.circular(15),
-              child: Image.asset(
-                "assets/pictures/images/video_test.png",
+              child: Image.network(
+                imageUrl,
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height,
-                fit: BoxFit.cover,
+                fit: BoxFit.fill,
               ),
             )),
             // titles
-            Expanded(
-                child: Padding(
-                    padding: const EdgeInsets.only(left: 4, right: 10),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        // title text
-                        Text(
-                          title,
-                          style: TextStyle(
-                              fontSize:
-                                  17 * MediaQuery.of(context).textScaleFactor,
-                              fontWeight: FontWeight.bold,
-                              color: isCurrent
-                                  ? Colors.white
-                                  : const Color(0xff414865)),
-                        ),
-                        // second text
-                        Text(
-                          description,
-                          maxLines: 2,
-                          overflow: TextOverflow.ellipsis,
-                          style: TextStyle(
-                              fontSize:
-                                  15 * MediaQuery.of(context).textScaleFactor,
-                              color: isCurrent
-                                  ? Colors.white
-                                  : const Color(0xff414865)),
-                        ),
-                      ],
-                    ))),
+            SizedBox(
+              width: MediaQuery.sizeOf(context).width,
+              height: MediaQuery.sizeOf(context).height / 10,
+              child: Center(
+                child: Text(
+                  title,
+                  style: TextStyle(
+                      fontSize: 17 * MediaQuery.of(context).textScaleFactor,
+                      fontWeight: FontWeight.bold,
+                      color:
+                          isCurrent ? Colors.white : const Color(0xff414865)),
+                ),
+              ),
+            ),
           ],
         )),
         // play button

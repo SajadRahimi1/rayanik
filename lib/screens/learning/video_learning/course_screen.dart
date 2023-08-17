@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:persian_number_utility/persian_number_utility.dart';
 import 'package:rayanik/core/widgets/course_widget.dart';
+import 'package:rayanik/core/widgets/lesson_widget.dart';
 import 'package:rayanik/models/models/course_model.dart';
 import 'package:rayanik/screens/learning/video_learning/download_files_screen.dart';
 import 'package:rayanik/screens/learning/video_learning/show_video_screen.dart';
@@ -13,6 +14,13 @@ class CourseScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     RxInt tabSelected = 0.obs;
+    List<List<Lessons>> lessons = List.generate(
+        courseModel.weeksCount ?? 0,
+        (index) =>
+            courseModel.lessons
+                ?.where((element) => element.weekNumber == index + 1)
+                .toList() ??
+            []);
     return SafeArea(
       child: DefaultTabController(
         length: 3,
@@ -57,7 +65,7 @@ class CourseScreen extends StatelessWidget {
                     const Spacer(),
                     //title
                     Text(
-                      courseModel.title??"",
+                      courseModel.title ?? "",
                       style: TextStyle(
                           color: Colors.white,
                           fontSize:
@@ -72,7 +80,7 @@ class CourseScreen extends StatelessWidget {
                         const Expanded(child: SizedBox()),
                         const Icon(Icons.access_time, color: Colors.white),
                         Text(
-                          " 3 هفته",
+                          " ${courseModel.weeksCount} هفته",
                           style: TextStyle(
                               fontSize:
                                   16 * MediaQuery.of(context).textScaleFactor,
@@ -119,7 +127,7 @@ class CourseScreen extends StatelessWidget {
                     indicatorColor: Colors.white,
                     // indicatorColor: Color(0xff414865),
                     tabs: List.generate(
-                        courseModel.lessons?.length??0,
+                        3,
                         (index) => Obx(
                               () => tabSelected.value == index
                                   ? Container(
@@ -157,88 +165,11 @@ class CourseScreen extends StatelessWidget {
                     // courses screen
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 10),
-                      child: ListView(
+                      child: ListView.builder(
                         physics: const BouncingScrollPhysics(),
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                "هفته اول",
-                                style: TextStyle(
-                                    fontSize: 19 *
-                                        MediaQuery.of(context).textScaleFactor),
-                              ),
-                              // Text(
-                              //   "همه",
-                              //   style: TextStyle(
-                              //       color: Colors.grey,
-                              //       fontSize: 16 *
-                              //           MediaQuery.of(context).textScaleFactor),
-                              // ),
-                            ],
-                          ),
-                          const SizedBox(
-                            height: 10,
-                          ),
-                          SizedBox(
-                            width: Get.width,
-                            height: Get.height / 3.8,
-                            child: ListView.builder(
-                                physics: const BouncingScrollPhysics(),
-                                itemCount: 6,
-                                scrollDirection: Axis.horizontal,
-                                itemBuilder: (_, index) => InkWell(
-                                    onTap: () => Get.to(() => ShowVideoScreen(
-                                          courseIndex: "درس ${index + 1}",
-                                          title: "رگرسیون خطی تک متغیر",
-                                        )),
-                                    child: CourseWidget(
-                                        isCurrent: index == 1,
-                                        title: "درس ${index + 1}",
-                                        description: "توضیحات درس ${index + 1}",
-                                        isDone: index == 0))),
-                          ),
-
-                          // second week
-                          const SizedBox(
-                            height: 30,
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                "هفته دوم",
-                                style: TextStyle(
-                                    fontSize: 19 *
-                                        MediaQuery.of(context).textScaleFactor),
-                              ),
-                              // Text(
-                              //   "همه",
-                              //   style: TextStyle(
-                              //       color: Colors.grey,
-                              //       fontSize: 16 *
-                              //           MediaQuery.of(context).textScaleFactor),
-                              // ),
-                            ],
-                          ),
-                          const SizedBox(
-                            height: 10,
-                          ),
-                          SizedBox(
-                            width: Get.width,
-                            height: Get.height / 3.8,
-                            child: ListView.builder(
-                                physics: const BouncingScrollPhysics(),
-                                itemCount: 6,
-                                scrollDirection: Axis.horizontal,
-                                itemBuilder: (_, index) => CourseWidget(
-                                    isCurrent: false,
-                                    title: "درس ${index + 1}",
-                                    description: "توضیحات درس ${index + 1}",
-                                    isDone: false)),
-                          )
-                        ],
+                        itemCount: courseModel.lessons?.length ?? 0,
+                        itemBuilder: (_, index) => LessonWidget(
+                            lessons: lessons[index], lessonsLength: index),
                       ),
                     ),
                     const SizedBox(),

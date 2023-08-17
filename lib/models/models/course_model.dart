@@ -81,7 +81,7 @@ class Lessons {
     courseId = json["courseId"];
     title = json["title"];
     description = json["description"];
-    imageUrl = json["imageUrl"];
+    imageUrl = json["imageUrl"]==null?null:'$baseUrl/uploads/${json["imageUrl"]}';
     videoUrl = json["videoUrl"];
     weekNumber = json["weekNumber"];
     id = json["Id"];
