@@ -80,7 +80,7 @@ class BookDetailScreen extends StatelessWidget {
                 // description text
                 const Expanded(
                     child: SingleChildScrollView(
-                  physics: const BouncingScrollPhysics(),
+                  physics: BouncingScrollPhysics(),
                   child: Text("""معرفی کتاب مادام بواری
 
 کتاب مادام بواری نخستین و برجسته‌ترین اثر گوستاو فلوبر، نویسنده‌ی نامدار و رئالیست فرانسوی است که در دهه 1850 و پیش از ظهور عقاید روانشناختی نوین نظیر «فروید» و... با نگرشی واقع‌بینانه به انسان و روحیات او پرداخته و در آثارش واقعیت را از افسانه جدا کرده و کاملاً بی‌طرفانه به بیان عینی رفتار بشر می‌پردازد.

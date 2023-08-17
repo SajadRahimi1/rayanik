@@ -11,15 +11,16 @@ class VideoHomeLearning extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: screensAppBar(),
+        appBar: screensAppBar(title: "آموزش ویدیویی"),
         body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10) +
-              EdgeInsets.only(top: 10),
+              const EdgeInsets.only(top: 10),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "دوره های محبوب",
+                // "دوره های محبوب",
+                "جدیدترین دوره",
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 19 * MediaQuery.of(context).textScaleFactor),

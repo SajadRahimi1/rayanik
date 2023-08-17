@@ -2,11 +2,8 @@ import 'package:flutter/material.dart';
 // import 'package:flutter_png/png.dart';
 import 'package:get/route_manager.dart';
 import 'package:rayanik/core/widgets/appbar_widget.dart';
-import 'package:rayanik/screens/learning/ebook/book_learning_screen.dart';
 import 'package:rayanik/screens/learning/ebook/book_home_screen.dart';
-import 'package:rayanik/screens/learning/podcast_learning_screen.dart';
 import 'package:rayanik/screens/learning/video_learning/video_home_screen.dart';
-import 'package:rayanik/screens/learning/video_learning_screen.dart';
 
 class LearningMenuScreen extends StatelessWidget {
   const LearningMenuScreen({Key? key}) : super(key: key);
