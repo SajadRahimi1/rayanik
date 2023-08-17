@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:get/route_manager.dart';
 import 'package:rayanik/core/widgets/course_widget.dart';
 import 'package:rayanik/models/models/course_model.dart';
+import 'package:rayanik/screens/learning/video_learning/show_video_screen.dart';
 
 class LessonWidget extends StatelessWidget {
-  const LessonWidget(
-      {Key? key, required this.lessonsLength, required this.lessons})
-      : super(key: key);
+  const LessonWidget({
+    Key? key,
+    required this.lessonsLength,
+    required this.lessons,
+  }) : super(key: key);
   final int lessonsLength;
   final List<Lessons> lessons;
 
@@ -36,12 +40,17 @@ class LessonWidget extends StatelessWidget {
               physics: const BouncingScrollPhysics(),
               itemCount: lessons.length,
               scrollDirection: Axis.horizontal,
-              itemBuilder: (_, index) => CourseWidget(
-                  isCurrent: false,
-                  title: lessons[index].title ?? "",
-                  imageUrl: lessons[index].imageUrl ?? "",
-                  description: "",
-                  isDone: false)),
+              itemBuilder: (_, index) => InkWell(
+                    onTap: () =>
+                        Get.to(() => ShowVideoScreen(lesson: lessons[index])),
+                    child: CourseWidget(
+                        isCurrent: false,
+                        title: lessons[index].title ?? "",
+                        imageUrl: lessons[index].imageUrl ?? "",
+                        heroTag: lessons[index].id ?? "",
+                        description: "",
+                        isDone: false),
+                  )),
         )
       ],
     );

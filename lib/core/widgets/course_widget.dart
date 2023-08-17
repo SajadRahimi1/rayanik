@@ -7,10 +7,11 @@ class CourseWidget extends StatelessWidget {
       required this.title,
       required this.description,
       required this.isDone,
-      required this.imageUrl})
+      required this.imageUrl,
+      required this.heroTag})
       : super(key: key);
   final bool isCurrent, isDone;
-  final String title, description, imageUrl;
+  final String title, description, imageUrl, heroTag;
 
   @override
   Widget build(BuildContext context) {
@@ -30,11 +31,15 @@ class CourseWidget extends StatelessWidget {
             Expanded(
                 child: ClipRRect(
               borderRadius: BorderRadius.circular(15),
-              child: Image.network(
-                imageUrl,
-                width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height,
-                fit: BoxFit.fill,
+              child: Hero(
+                transitionOnUserGestures: true,
+                tag: heroTag,
+                child: Image.network(
+                  imageUrl,
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height,
+                  fit: BoxFit.fill,
+                ),
               ),
             )),
             // titles
